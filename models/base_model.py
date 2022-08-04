@@ -9,8 +9,8 @@ This is the file containing the BaseModel class
 """
 
 from datetime import datetime as dt
-import models
-import uuid
+import models, uuid
+
 
 class BaseModel:
     """
@@ -46,7 +46,6 @@ class BaseModel:
         """Updates class attr - updated_at to time of update"""
         self.updated_at = dt.now()
         models.storage.save()
-
 
     def to_dict(self):
         """returns dictionary representaion of the class"""
