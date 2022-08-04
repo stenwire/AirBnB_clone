@@ -8,11 +8,13 @@ This is the command line interface for HBNB
         do_destroy() - Deletes an instance
         do_all() - Prints all string repr of all instances
         do_udate() - Updates an instance
+        precmd() - Processes special CLI commands
+        do_count() - Prints the number of a class instances
         do_EOF() - Quit command to exit the CLI
         do_quit() - Quit command to exit the CLI
 """
 
-import cmd, sys, shlex, models
+import cmd, sys, shlex, models, re
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -44,6 +46,28 @@ class HBNBCommand(cmd.Cmd):
         """
         print('Welcome to HBNB command line interface')
 
+    def precmd(self, line: str) -> str:
+        """
+            Processes special CLI commands
+        """
+        flags = "^(\w+)\.(\w+)\(([^\)]*)"
+
+        if re.search(flags, line):
+            result = re.findall(flags, line)
+            cls_name = result[0][0]
+            method = result[0][1]
+            args = result[0][2]
+
+            if len(result[0]) >= 3:
+                temp = [arg.strip("'") \
+                    for arg in result[0][2].\
+                        split(", ")]
+                args = " ".join(temp)
+
+            return f"{method} {cls_name} {args}"
+        else:
+            return super().precmd(line)
+    
     def do_create(self, *args):
         """
         Creates a new instance of BaseModel, 
@@ -156,7 +180,27 @@ class HBNBCommand(cmd.Cmd):
             k = args[0] + "." + args[1]
             setattr(models.storage.all()[k], args[2], args[3])
             models.storage.all()[k].save()
-    
+
+    def do_count(self, arg):
+        """
+        Prints the number of a class instance
+        based on the class name
+        """
+        args = shlex.split(arg)
+        total = []
+        if len(args) == 0:
+            print("** class name missing **")
+            return False
+        if args[0] in hbnb_models:
+            for k in models.storage.all().keys():
+                if args[0] in k.split('.'):
+                    total.append(args[0])
+        else:
+            print("** class doesn't exist **")
+            return False
+
+        print(len(total))
+
     def do_EOF(self, line):
         """
         Quit command to exit the CLI
