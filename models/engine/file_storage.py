@@ -11,6 +11,12 @@ This is the file storage module
 import json
 from os import path
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 file = 'file.json'
@@ -21,6 +27,7 @@ class FileStorage:
     """
     
     def __init__(self, __file_path=file, __objects={}):
+        """Initialise the class -- FileStorage"""
         self.__file_path = __file_path
         self.__objects = __objects
 
@@ -30,7 +37,7 @@ class FileStorage:
 
     def new(self, obj):
         """Creates new object key"""
-        obj_key = type(obj).__name__ + "." + obj.id
+        obj_key = type(obj).__name__ + "." + obj.id # changed self to obj
         self.__objects[obj_key] = obj
 
     def save(self):
@@ -45,7 +52,7 @@ class FileStorage:
     def reload(self):
         """Deserializes json file to retrieve old json objects"""
         if path.isfile(self.__file_path):
-            with open(self.__file_path) as f:
+            with open(self.__file_path, 'r') as f:
                 d = json.load(f)
                 for k, v in d.items():
                     cls = v["__class__"]
