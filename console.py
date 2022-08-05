@@ -8,7 +8,7 @@ This is the command line interface for HBNB
         do_destroy() - Deletes an instance
         do_all() - Prints all string repr of all instances
         do_udate() - Updates an instance
-        precmd() - Processes special CLI commands
+        default() - Processes special CLI commands
         do_count() - Prints the number of a class instances
         do_EOF() - Quit command to exit the CLI
         do_quit() - Quit command to exit the CLI
@@ -46,27 +46,42 @@ class HBNBCommand(cmd.Cmd):
         """
         print('Welcome to HBNB command line interface')
 
-    def precmd(self, line: str) -> str:
+    def default(self, line):
         """
             Processes special CLI commands
         """
-        flags = "^(\w+)\.(\w+)\(([^\)]*)"
+        cmd_dict = {
+                    "all": self.do_all,
+                    "count": self.do_count,
+                    "show": self.do_show,
+                    "destroy": self.do_destroy,
+                    "update": self.do_update
+                    }
 
-        if re.search(flags, line):
-            result = re.findall(flags, line)
-            cls_name = result[0][0]
-            method = result[0][1]
-            args = result[0][2]
+        flags = r"^(\w+)\.(\w+)\((.*)\)"
+        args = re.match(flags, line)
+        if args:
+            args = args.groups()
+        if not args or len(args) < 2 \
+            or args[0] not in hbnb_models \
+                or args[1] not in cmd_dict.keys():
+            super().default(line)
 
-            if len(result[0]) >= 3:
-                temp = [arg.strip("'") \
-                    for arg in result[0][2].\
-                        split(", ")]
-                args = " ".join(temp)
-
-            return f"{method} {cls_name} {args}"
-        else:
-            return super().precmd(line)
+        if args[1] in ["all", "count"]:
+            return cmd_dict[args[1]](args[0])
+        elif args[1] in ["show", "destroy"]:
+            return cmd_dict[args[1]](args[0] + ' ' + args[2])
+        elif args[1] == "update":
+            params = re.match(r"\"(.+?)\", (.+)", args[2])
+            if params.groups()[1][0] == '{':
+                param_dict = eval(params.groups()[1])
+                for k, v in param_dict.items():
+                    return cmd_dict[args[1]](args[0] + " " + params.groups()[0] + \
+                        " " + k + " " + str(v))
+            else:
+                output = params.groups()[1].split(", ")
+                return cmd_dict[args[1]](args[0] + " " + params.groups()[0] + " " + \
+                    output[0] + " " + output[1])
     
     def do_create(self, *args):
         """
@@ -200,6 +215,12 @@ class HBNBCommand(cmd.Cmd):
             return False
 
         print(len(total))
+
+    def emptyline(self):
+        """
+        Handles empty line input
+        """
+        return False
 
     def do_EOF(self, line):
         """
