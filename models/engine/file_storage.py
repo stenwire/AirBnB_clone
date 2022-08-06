@@ -21,11 +21,12 @@ from models.review import Review
 
 file = 'file.json'
 
+
 class FileStorage:
     """
     Serializes and Deserializes class instance to a json file
     """
-    
+
     def __init__(self, __file_path=file, __objects={}):
         """Initialise the class -- FileStorage"""
         self.__file_path = __file_path
