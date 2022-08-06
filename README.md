@@ -2,7 +2,7 @@
 <br>
 # HBNB - Command Line Interface
 
-> THe HBNB console is the first step in an attempt to clone the known [AirBnb](#) site. The console is a commmand line interface that enables the user manage models( “model” in a OOP project is the representation of an object/instance.), i.e perform CRUD+(crate, read, update, delete,..) operations on models.
+> THe HBNB console is the first step in an attempt to clone the known [AirBnb](https://www.airbnb.com/) site. The console is a commmand line interface that enables the user manage models, i.e perform crate, read, update, delete,.. operations on the models. *“model” in a OOP project is the representation of an object/instance.*
 
 <img src="./media/hbnb.gif">
 
@@ -149,7 +149,6 @@ Here's what it looks like:
 > pictorial representation of the functionality of interacting with models
 <img src="./media/img-2.png">
 <br>
-<br>
 
 ### How does the console work? ⚙
 
@@ -183,7 +182,7 @@ No bugs at the moment, but if you notice any, please raise an issue.
 <br>
 
 # Author 🐱‍🏍
-* [Stephen Nwankwo](#)
+* [Stephen Nwankwo](https://www.linkedin.com/in/stephen-nwankwo-9876b4196/)
 <br>
 <br>
 
