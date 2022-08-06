@@ -1,28 +1,25 @@
-<style>
-    h1 {text-align: center; color: red; font: verdana;}
-</style>
-
-[⬇️Go straight to bottom](#license-and-contribution-👨‍👩)
+[⬇️Go straight to bottom](#license-and-contribution-)
+<br>
 # HBNB - Command Line Interface
 
 > THe HBNB console is the first step in an attempt to clone the known [AirBnb](#) site. The console is a commmand line interface that enables the user manage models( “model” in a OOP project is the representation of an object/instance.), i.e perform CRUD+(crate, read, update, delete,..) operations on models.
 
-<img src="./media/hbnb.gif" height=200% width=200%>
+<img src="./media/hbnb.gif">
 
 <br>
 <br>
 <br>
 
 # Navigate
-* [Project concept?](#concept)
-* [How does it work, how to get it working locally?](#technical)
-* [Pitfalls/Bugs?](#bugs-🦠)
-* [Official](#license-and-contribution-👨‍👩)
-* [Sauce coders](#author-🐱‍🏍)
-
-# --------- CONCEPT --------
+* [Project concept?](#----------concept---------)
+* [How does it work, how to get it working locally?](#----------technical---------)
+* [Pitfalls/Bugs?](#bugs-)
+* [Official](#license-and-contribution-)
+* [Sauce coders](#author-)
 
 <br>
+
+# --------- CONCEPT --------
 
 ## The console ⚡
 
@@ -35,6 +32,7 @@
 
 * The console will be a tool to validate this storage engine
 
+> pictorial representaion of the role of the console
 <img src="./media/concept.png" alt="what part the console plays">
 <br>
 <br>
@@ -59,7 +57,6 @@ You will always use class attributes for any object. Why not instance attributes
 ## Data-diagram 🧮
 
 > pictorial representation of model relationship
-
 <img src="./media/data-diagram.jpg">
 <br>
 <br>
@@ -74,14 +71,12 @@ You will always use class attributes for any object. Why not instance attributes
 * [`tests`](#) directory contains all unit tests.
 * [`console.py`](#) file is the entry point/CLI of our command interpreter.
 * [`models/base_model.py`](#) file is the base class of all our models. It contains common elements:
-> attributes: id, `created_at` and `updated_at`
->
-> methods: `save()` and `to_json()`
+    > attributes: id, `created_at` and `updated_at`
+    >
+    > methods: `save()` and `to_json()`
 * [`models/engine`](#) directory will contain all storage classes (using the same prototype). For the moment you will have only one: file_storage.py.
-<br>
-<br>
 
-## How to start it 🏁
+## How to setup locally 🏁
 > I assume you're working on a linux machine, Arch Linux preferably 🙂
 
 To get a copy of the repo and test on you machine please follow the steps below
@@ -151,6 +146,7 @@ And the `reload()?` now you know the file is a JSON file representing all Studen
 
 Here's what it looks like:
 
+> pictorial representation of the functionality of interacting with models
 <img src="./media/img-2.png">
 <br>
 <br>
@@ -175,6 +171,7 @@ Here are some of the console commands and what they do:
 
 Here's an illustration:
 
+> pictorial representation of the functionality of the console
 <img src="./media/img-1.png">
 
 <br>
