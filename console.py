@@ -31,7 +31,7 @@ hbnb_models = {
     "Amenity": Amenity,
     "Place": Place,
     "Review": Review
-        }
+}
 
 
 class HBNBCommand(cmd.Cmd):
