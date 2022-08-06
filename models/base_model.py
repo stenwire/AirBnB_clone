@@ -9,12 +9,13 @@ This is the file containing the BaseModel class
 """
 
 from datetime import datetime as dt
-import models, uuid
+import models
+import uuid
 
 
 class BaseModel:
     """
-    A class BaseModel that defines all common 
+    A class BaseModel that defines all common
     attributes/methods for other classes
     """
 

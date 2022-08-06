@@ -14,7 +14,11 @@ This is the command line interface for HBNB
         do_quit() - Quit command to exit the CLI
 """
 
-import cmd, sys, shlex, models, re
+import cmd
+import sys
+import shlex
+import models
+import re
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -76,16 +80,18 @@ class HBNBCommand(cmd.Cmd):
             if params.groups()[1][0] == '{':
                 param_dict = eval(params.groups()[1])
                 for k, v in param_dict.items():
-                    return cmd_dict[args[1]](args[0] + " " + params.groups()[0] + \
+                    return cmd_dict[args[1]](args[0] + " " +
+                    params.groups()[0] +
                         " " + k + " " + str(v))
             else:
                 output = params.groups()[1].split(", ")
-                return cmd_dict[args[1]](args[0] + " " + params.groups()[0] + " " + \
-                    output[0] + " " + output[1])
-    
+                return cmd_dict[args[1]](args[0] + " " +
+                    params.groups()[0] + " " +
+                        output[0] + " " + output[1])
+
     def do_create(self, *args):
         """
-        Creates a new instance of BaseModel, 
+        Creates a new instance of BaseModel,
         saves it (to the JSON file) and prints the id
         """
         if args[0] == '':
@@ -99,7 +105,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """
-        Prints the string representation of an instance 
+        Prints the string representation of an instance
         based on the class name and id
         """
         args = shlex.split(arg)
@@ -146,7 +152,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """
-        Prints all string representation of all instances 
+        Prints all string representation of all instances
         based or not on the class name
         """
         args = shlex.split(arg)
@@ -167,7 +173,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-        Updates an instance based on the class name 
+        Updates an instance based on the class name
         and id by adding or updating attribute
         """
         args = shlex.split(arg)
@@ -234,6 +240,7 @@ class HBNBCommand(cmd.Cmd):
         Quit command to exit the CLI
         """
         return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
