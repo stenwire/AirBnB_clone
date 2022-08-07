@@ -80,14 +80,14 @@ class HBNBCommand(cmd.Cmd):
             if params.groups()[1][0] == '{':
                 param_dict = eval(params.groups()[1])
                 for k, v in param_dict.items():
-                    return cmd_dict[args[1]](args[0] + " " +
-                    params.groups()[0] +
-                        " " + k + " " + str(v))
+                    return (cmd_dict[args[1]](args[0] + " " +
+                            params.groups()[0] +
+                            " " + k + " " + str(v)))
             else:
                 output = params.groups()[1].split(", ")
-                return cmd_dict[args[1]](args[0] + " " +
-                    params.groups()[0] + " " +
-                        output[0] + " " + output[1])
+                return (cmd_dict[args[1]](args[0] + " " +
+                        params.groups()[0] + " " +
+                        output[0] + " " + output[1]))
 
     def do_create(self, *args):
         """
