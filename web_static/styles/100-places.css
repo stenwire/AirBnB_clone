@@ -224,3 +224,7 @@ section.places article .reviews ul li p {
     margin: 0 auto;
 }
 
+footer {
+    position: relative;
+}
+
