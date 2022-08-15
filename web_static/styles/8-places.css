@@ -1,0 +1,95 @@
+section.places {
+    /* float: left; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* position: relative; */
+}
+
+section.places h1 {
+    font-size: 30px;
+    margin-bottom: -2px;
+    width: 100%;
+    /* position: relative; */
+}
+
+section.places article {
+    border:  #FF5A5F 1px solid;
+    border-radius: 4px;
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    flex: 100% 100% 100%;
+    position: relative;
+}
+
+
+section.places article h2 {
+    font-size: 30px;
+    text-align: center;
+    /* ################### */
+    /* added on monday; */
+    margin-bottom: 70px;
+    margin-top: -5px;
+}
+
+/* ####################################################### */
+
+section.places article .price_by_night {
+    color: #FF5A5F;
+    border: #FF5A5F 4px solid;
+    border-radius: 50%;
+    min-width: 80px; /*changed from 60*/
+    height: 80px; /*from 60*/
+    /* ####################### */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 15px;
+    /* ################### */
+    line-height: 0.7; /*from 0*/
+    /* ####################### */
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    bottom: 50%;
+}
+
+section.places article .information {
+    height: 80px;
+    border-top: 1px #DDDDDD solid;
+    border-bottom: 1px #DDDDDD solid;
+    display: flex;
+    margin: 0 auto;
+    /* padding-left: 50px; */
+    /* padding: 10px 0px 0 160px; */
+}
+
+section.places article .information .max_guest {
+    width: 100px;
+    background: url("../images/icon_group.png");
+    background-repeat: no-repeat;
+    padding-top: 35px;
+    margin: 5px 30px 5px 50px;
+
+}
+
+section.places article .information .number_rooms {
+    width: 100px;
+    background: url("../images/icon_bed.png");
+    background-repeat: no-repeat;
+    padding-top: 35px;
+    margin: 5px 30px 5px 0px;
+}
+
+
+section.places article .information .number_bathrooms {
+    width: 100px;
+    background: url("../images/icon_bath.png");
+    background-repeat: no-repeat;
+    padding-top: 35px;
+    margin: 5px 0px 5px 0px;
+}
+
+

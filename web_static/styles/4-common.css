@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #484848;
+    font-size: 14px;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    /* margin: 30px 0 30px 0; */
+    /* position: absolute;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    justify-content: center; */
+    margin: auto;
+    width: 60%;
+    /* border: 3px solid #73AD21; */
+    /* padding: 10px; */
+    /* position: relative; */
+}

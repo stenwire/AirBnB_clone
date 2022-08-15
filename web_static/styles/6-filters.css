@@ -1,0 +1,118 @@
+section.filters {
+    background: white;
+    height: 70px;
+    width: 1000px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+section.filters div.locations {
+    height: 70px;
+    width: 250px;
+    border-right: #DDDDDD 1px solid;
+    /* ############ */
+    margin: 0 auto;
+    margin-left: 50px;
+    /* ############## */
+
+}
+
+section.filters div.amenities {
+    height: 70px;
+    width: 250px;
+    /* ############# */
+    margin: 0 auto;
+    margin-left: -350px;
+}
+
+section.filters div.locations h3, div.amenities  h3 {
+    font-weight: 600;
+    margin-bottom: -18px;
+}
+
+section.filters div.locations h4, div.amenities  h4 {
+    font-weight: 400;
+    font-size: 14px;
+    /* margin-bottom: -6px; */
+}
+
+
+/* ---------------- Task 6 ---------------- */
+section.filters div.locations div.popover, div.amenities div.popover {
+    background-color: #FAFAFA;
+    width: 250px;
+    border: #DDDDDD 1px solid;
+    border-radius: 4px;
+    float: right;
+    padding-left: 50px;
+    /* ################### */
+    display: none;
+    /* position: absolute; */
+    z-index: 1;
+    /* left: 0; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+section.filters div.locations div.popover ul {
+    list-style: none;
+    /* padding: 15px; */
+    padding-bottom: 12px;
+}
+
+section.filters div.locations div.popover ul li {
+    margin-left: -17px;
+}
+
+section.filters div.locations div.popover h2 {
+    font-size: 16px;
+    margin-bottom: -10px;
+}
+
+section.filters div.locations:hover .popover, div.amenities:hover .popover {
+    display: block;
+}
+
+
+section.filters div.amenities div.popover ul {
+    list-style: none;
+    /* padding: 15px; */
+    padding-bottom: 12px;
+}
+
+section.filters div.amenities div.popover ul li {
+    margin-left: -40px;
+    margin-bottom: 5px;
+    /* font-weight: 500; */
+}
+
+
+
+/* ---------------- Task 6 ---------------- */
+
+
+
+section.filters button {
+    font-size: 18px;
+    float: left;
+    background: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 200px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section.filters button:hover {
+    opacity: 90%;
+    cursor: pointer;
+}

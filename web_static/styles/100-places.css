@@ -1,0 +1,226 @@
+section.places {
+    /* float: left; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* position: relative; */
+}
+
+section.places h1 {
+    font-size: 30px;
+    margin-bottom: -2px;
+    width: 100%;
+    /* position: relative; */
+}
+
+section.places article {
+    border:  #FF5A5F 1px solid;
+    border-radius: 4px;
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    flex: 100% 100% 100%;
+    position: relative;
+}
+
+
+section.places article h2 {
+    font-size: 30px;
+    text-align: center;
+    /* ################### */
+    /* added on monday; */
+    margin-bottom: 70px;
+    margin-top: -5px;
+}
+
+/* ####################################################### */
+
+section.places article .price_by_night {
+    color: #FF5A5F;
+    border: #FF5A5F 4px solid;
+    border-radius: 50%;
+    min-width: 80px; /*changed from 60*/
+    height: 80px; /*from 60*/
+    /* ####################### */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 15px;
+    /* ################### */
+    line-height: 0.7; /*from 0*/
+    /* ####################### */
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    bottom: 50%;
+}
+
+/* section.places article .price_by_night .circle-txt {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+section.places article .price_by_night::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+} */
+
+section.places article .information {
+    height: 80px;
+    border-top: 1px #DDDDDD solid;
+    border-bottom: 1px #DDDDDD solid;
+    display: flex;
+    margin: 0 auto;
+    /* padding-left: 50px; */
+    /* padding: 10px 0px 0 160px; */
+}
+
+section.places article .information .max_guest {
+    width: 100px;
+    background: url(../images/icon_group.png);
+    background-repeat: no-repeat;
+    padding-top: 35px;
+    margin: 5px 30px 5px 50px;
+
+}
+
+section.places article .information .number_rooms {
+    width: 100px;
+    background: url(../images/icon_bed.png);
+    background-repeat: no-repeat;
+    padding-top: 35px;
+    margin: 5px 30px 5px 0px;
+}
+
+
+section.places article .information .number_bathrooms {
+    width: 100px;
+    background: url(../images/icon_bath.png);
+    background-repeat: no-repeat;
+    padding-top: 35px;
+    margin: 5px 0px 5px 0px;
+}
+
+/* ################Amenities######################## */
+
+
+section.places article .amenities {
+    margin-top: 40px;
+    /* width: 100%; */
+    /* background-image: url("../images/icon_tv.png"); */
+    /* align-content: center; */
+
+}
+
+section.places article .amenities h2 {
+    width: 100%;
+    font-size: 16px;
+    border-bottom: #DDDDDD 1px solid;
+    /* float: left; */
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 5px;
+    /* background-image: url("../images/icon_tv.png"); */
+}
+
+section.places article .amenities ul.icon-1 {
+    List-style-type: none;
+    Padding: 0;
+    Margin: 0;
+}
+
+section.places article .amenities ul.icon-1 li.icon-1 {
+    background: url("../images/icon_tv.png");
+    background-repeat: no-repeat;
+    Height: 54px;
+    Padding-left: 54px;
+    Padding-top:3px;
+}
+
+section.places article .amenities ul.icon-2 {
+    List-style-type: none;
+    Padding: 0;
+    Margin: 0;
+}
+
+section.places article .amenities ul.icon-2 li.icon-2 {
+    background: url("../images/icon_wifi.png");
+    background-repeat: no-repeat;
+    Height: 54px;
+    Padding-left: 54px;
+    Padding-top:3px;
+}
+
+section.places article .amenities ul.icon-3 {
+    List-style-type: none;
+    Padding: 0;
+    Margin: 0;
+}
+
+section.places article .amenities ul.icon-3 li.icon-3 {
+    background: url("../images/icon_pets.png");
+    background-repeat: no-repeat;
+    Height: 54px;
+    Padding-left: 54px;
+    Padding-top:3px;
+}
+
+
+/* #################Reviews###################### */
+
+section.places article .reviews {
+    margin-top: 40px;
+    /* margin-left: -40px; */
+    width: 100%;
+    /* ############################# */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* height: 400px; */
+}
+
+section.places article .reviews h2 {
+    width: 100%;
+    font-size: 16px;
+    border-bottom: #DDDDDD 1px solid;
+    /* float: left; */
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: -5px;
+    padding: 5px;
+}
+
+section.places article .reviews ul {
+    list-style: none;
+    padding: 0;
+    /* padding-left: -20px; */
+}
+
+
+section.places article .reviews ul h3 {
+    list-style: none;
+    width: 100%;
+    font-size: 16px;
+    /* margin-bottom: 20px; */
+}
+
+/*
+section.places article .reviews ul li h3 {
+    width: 100%;
+    margin-bottom: -8px;
+} */
+
+section.places article .reviews ul li p {
+    width: 100%;
+    font-size: 12px;
+    /* padding-left: -40px; */
+    display: flex;
+    margin: 0 auto;
+}
+
